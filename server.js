@@ -10,12 +10,12 @@ app.use(bodyParser.json());
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'your-email@gmail.com',
-    pass: 'your-password'
+    user: 'sophiathepromoter@gmail.com',
+    pass: 'yqqpjrlejrckoaph'
   }
 });
 
-const bot = new TelegramBot('YOUR_BOT_TOKEN', { polling: false });
+const bot = new TelegramBot('6031687053:AAEzZ1dy3Z0Lxg4tl0VXm0a9NT2HJ_vpGog', { polling: false });
 
 app.post('/submit', (req, res) => {
   const { name, email, message } = req.body;
@@ -28,7 +28,7 @@ app.post('/submit', (req, res) => {
 
 function sendThankYouEmail(email) {
   const mailOptions = {
-    from: 'your-email@gmail.com',
+    from: 'sophiathepromoter@gmail.com',
     to: email,
     subject: 'Thank you for contacting us',
     text: 'We appreciate your message and will get back to you shortly.'
@@ -44,7 +44,7 @@ function sendThankYouEmail(email) {
 }
 
 function sendTelegramMessage(name, email, message) {
-  const chatId = 'YOUR_CHAT_ID';
+  const chatId = '@sophiathepromoter';
 
   const text = `
     New contact form submission:
